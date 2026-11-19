@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inculturation &amp; Liberation — Questions and Answers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f2e8; --card:#fffdf8; --ink:#231c15; --muted:#6b5f52; --rule:#e2d8c6;
+  --red:#7a1f1f; --red-soft:#f3e3df; --gold:#a07a2c;
+  --m:#2f4f7a; --p:#7a1f1f; --w:#8a5a12; --s:#4d6b3c; --n:#5c5470;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 "EB Garamond",Georgia,serif}
+a{color:var(--red)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:3px double var(--rule);padding:44px 0 26px;text-align:center}
+.kicker{font:600 12px/1 "Source Sans 3",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+h1{font-weight:500;font-size:44px;line-height:1.1;margin:12px 0 10px;letter-spacing:-.01em}
+h1 span{color:var(--red)}
+.lede{max-width:640px;margin:0 auto;color:var(--muted);font-size:19px}
+.verse{margin:22px auto 0;max-width:560px;font-style:italic;color:var(--muted);font-size:17px}
+.verse b{font-style:normal;font-weight:500;color:var(--ink)}
+nav.toc{position:sticky;top:0;z-index:5;background:rgba(247,242,232,.96);backdrop-filter:blur(4px);border-bottom:1px solid var(--rule)}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 20px;scrollbar-width:none}
+nav.toc a{flex:none;font:600 13px/1 "Source Sans 3",sans-serif;text-decoration:none;color:var(--ink);padding:8px 12px;border:1px solid var(--rule);border-radius:999px;background:var(--card)}
+nav.toc a:hover{border-color:var(--red);color:var(--red)}
+.tools{display:flex;gap:10px;align-items:center;margin:26px 0 8px;flex-wrap:wrap}
+.tools input{flex:1;min-width:220px;font:16px "Source Sans 3",sans-serif;padding:11px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--card);color:var(--ink)}
+.tools input:focus{outline:2px solid var(--red);outline-offset:1px}
+.tools button{font:600 13px "Source Sans 3",sans-serif;padding:11px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--card);cursor:pointer;color:var(--ink)}
+.count{font:13px "Source Sans 3",sans-serif;color:var(--muted)}
+.method{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);border-radius:8px;padding:18px 22px;margin:22px 0}
+.method h2{font-size:22px;margin:0 0 6px;font-weight:600}
+.method p{margin:6px 0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:10px;font:14px/1.4 "Source Sans 3",sans-serif}
+.g{display:inline-block;font:700 11px/1 "Source Sans 3",sans-serif;letter-spacing:.06em;color:#fff;border-radius:4px;padding:4px 6px;margin-right:6px;vertical-align:1px}
+.g.M{background:var(--m)}.g.P{background:var(--p)}.g.W{background:var(--w)}.g.S{background:var(--s)}.g.N{background:var(--n)}
+section.cat{margin:40px 0 10px}
+section.cat>h2{font-size:28px;font-weight:600;margin:0 0 4px;border-bottom:1px solid var(--rule);padding-bottom:8px;scroll-margin-top:64px}
+section.cat>h2 small{display:block;font:600 12px "Source Sans 3",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.intro{color:var(--muted);margin:8px 0 14px}
+details.qa{background:var(--card);border:1px solid var(--rule);border-radius:8px;margin:10px 0;scroll-margin-top:64px}
+details.qa[open]{border-color:#d5c6aa;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+details.qa summary{list-style:none;cursor:pointer;padding:15px 48px 15px 20px;position:relative;font-size:20px;font-weight:500;line-height:1.35}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary::after{content:"+";position:absolute;right:18px;top:12px;font:400 26px/1 "Source Sans 3",sans-serif;color:var(--red)}
+details.qa[open] summary::after{content:"–"}
+.qn{font:600 12px "Source Sans 3",sans-serif;color:var(--gold);margin-right:8px;letter-spacing:.06em}
+.ans{padding:0 22px 18px}
+.ans p{margin:10px 0}
+.short{font-size:19px;background:var(--red-soft);border-radius:6px;padding:10px 14px;margin:4px 0 12px}
+.short b{color:var(--red)}
+blockquote{margin:12px 0;padding:6px 16px;border-left:3px solid var(--red);font-style:italic;color:#3a3027}
+blockquote cite{display:block;font:normal 14px "Source Sans 3",sans-serif;color:var(--muted);margin-top:4px}
+.caution{font:15px/1.5 "Source Sans 3",sans-serif;background:#fbf6e9;border:1px dashed #d8c48f;border-radius:6px;padding:9px 12px;margin:12px 0}
+.caution b{color:var(--w)}
+.src{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px}
+.src h4{margin:0 0 6px;font:700 12px "Source Sans 3",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.src ol{margin:0;padding-left:20px;font:15px/1.5 "Source Sans 3",sans-serif}
+.src li{margin:4px 0}
+.permalink{display:block;text-align:right;font:13px "Source Sans 3",sans-serif;color:var(--muted);text-decoration:none;margin-top:8px}
+table.tl{width:100%;border-collapse:collapse;font:15px/1.45 "Source Sans 3",sans-serif;margin:10px 0}
+table.tl td{border-bottom:1px solid var(--rule);padding:7px 6px;vertical-align:top}
+table.tl td:first-child{white-space:nowrap;font-weight:600;color:var(--red);width:110px}
+.hidden{display:none!important}
+.latest{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:18px 22px;margin:22px 0}
+.latest h2{font-size:22px;margin:0 0 8px;font-weight:600}
+.latest ul{list-style:none;margin:0;padding:0}
+.latest li{border-top:1px solid var(--rule);padding:10px 0}
+.latest li:first-child{border-top:0}
+.latest a.t{font-size:19px;font-weight:500;text-decoration:none}
+.latest a.t:hover{text-decoration:underline}
+.latest .d{font:13px "Source Sans 3",sans-serif;color:var(--muted);margin-left:6px}
+.latest p{margin:4px 0 0;color:var(--muted);font-size:16px}
+.latest .all{display:inline-block;margin-top:8px;font:600 14px "Source Sans 3",sans-serif}
+
+.sub{display:inline-block;margin-top:20px;font:600 14px "Source Sans 3",sans-serif;text-decoration:none;color:#fff;background:var(--red);padding:10px 18px;border-radius:999px}
+.sub:hover{background:#5e1717}
+
+footer{margin:60px 0 0;border-top:3px double var(--rule);padding:26px 0 50px;color:var(--muted);font:15px/1.6 "Source Sans 3",sans-serif;text-align:center}
+@media (max-width:600px){body{font-size:17px}h1{font-size:34px}details.qa summary{font-size:18px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="kicker">inculturationliberation</div>
+    <h1>Inculturation &amp; Liberation<br><span>in the Catholic Church in India</span></h1>
+    <p class="lede">Plain questions and sourced answers on how inculturation and liberation theology have changed the doctrine, worship and catechesis of the Church in India, and what the Church herself has said about it.</p>
+    <p class="verse">“Beware of false prophets, who come to you in the clothing of sheep, but inwardly they are ravening wolves. By their fruits you shall know them.” <b>— Matthew 7:15–16 (Douay-Rheims)</b></p>
+    <a class="sub" href="https://inclib.substack.com/" target="_blank" rel="noopener">Read our articles on Substack: The Devil of Inculturation →</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <div class="wrap">
+    <a href="#basics">Basics</a>
+    <a href="#origins">Origins</a>
+    <a href="#nbclc">NBCLC &amp; Amalorpavadass</a>
+    <a href="#liberation">Liberation theology</a>
+    <a href="#rome">What Rome said</a>
+    <a href="#tradition">Perennial teaching</a>
+    <a href="#objections">Objections</a>
+    <a href="#witnesses">Witnesses</a>
+    <a href="#action">What to do</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="latest" id="latest" aria-label="Latest articles">
+    <h2>Latest articles on Substack</h2>
+<!-- SUBSTACK:START -->
+    <p>New articles from <a href="https://inclib.substack.com/" target="_blank" rel="noopener">The Devil of Inculturation</a> will appear here automatically.</p>
+<!-- SUBSTACK:END -->
+  </section>
+
+  <div class="method">
+    <h2>How this site cites its sources</h2>
+    <p>Every answer ends with its sources. Each source carries a grade, so you can see how firm the ground is. Where a point is disputed, or a claim could not be verified, the answer says so.</p>
+    <p>We judge doctrines and published actions, not the souls of the men involved (<i>de internis non iudicat Ecclesia</i>).</p>
+    <div class="legend">
+      <span><span class="g M">MAG</span>Magisterium: councils, popes, Roman congregations</span>
+      <span><span class="g W">WIT</span>Witness report (second-hand)</span>
+      <span><span class="g S">SCH</span>Scholar, critic or secondary study</span>
+      <span><span class="g N">NEWS</span>News report</span>
+    </div>
+  </div>
+
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search the questions and answers (e.g. OM, arati, Shantivanam, Marxism)" aria-label="Search">
+    <button id="expand" type="button">Open all</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div id="content"></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>inculturationliberation</b> — a research site in question-and-answer form.</p>
+    <p>Longer articles: <a href="https://inclib.substack.com/" target="_blank" rel="noopener">The Devil of Inculturation on Substack</a></p>
+    <p>Quotations from Church documents use the Vatican's English text where available, or the standard English translations linked in each answer. Denzinger (DS) numbers follow the Denzinger–Schönmetzer numbering; check them against your own edition before printing.</p>
+    <p>Corrections are welcome: if a source is wrong or a link is broken, tell us and we will fix it.</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- Source library ---------- */
+const S = {
+  /* Magisterium */
+  propaganda1659:{g:"M",t:"Sacred Congregation de Propaganda Fide, Instruction to the Vicars Apostolic of Tonkin and Cochinchina (1659), in Collectanea S. C. de Propaganda Fide, vol. 1, n. 135."},
+  gregoryXV:{g:"M",t:"Gregory XV, Apostolic Constitution Romanae Sedis Antistes (31 January 1623), on the Madurai mission of Roberto de Nobili."},
+  omnium:{g:"M",t:"Benedict XIV, Bull Omnium Sollicitudinum (12 September 1744), on the Malabar Rites.",u:"https://www.papalencyclicals.net/ben14/b14omnium.htm"},
+  mirari:{g:"M",t:"Gregory XVI, Encyclical Mirari Vos (15 August 1832), §13 on indifferentism.",u:"https://www.papalencyclicals.net/greg16/g16mirar.htm"},
+  deiFilius:{g:"M",t:"First Vatican Council, Dogmatic Constitution Dei Filius (1870), ch. 3–4 and canons (DS 3008, 3020, 3043).",u:"https://www.papalencyclicals.net/councils/ecum20.htm"},
+  pascendi:{g:"M",t:"St. Pius X, Encyclical Pascendi Dominici Gregis (8 September 1907), §§13–14, 39.",u:"https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"},
+  lamentabili:{g:"M",t:"Holy Office under St. Pius X, Decree Lamentabili Sane (3 July 1907), propositions 20, 22, 59.",u:"https://www.papalencyclicals.net/pius10/p10lamen.htm"},
+  oath:{g:"M",t:"St. Pius X, Motu Proprio Sacrorum Antistitum (1 September 1910): the Oath against Modernism.",u:"https://www.papalencyclicals.net/pius10/p10moath.htm"},
+  mortalium:{g:"M",t:"Pius XI, Encyclical Mortalium Animos (6 January 1928), §2.",u:"https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19280106_mortalium-animos.html"},
+  mediator:{g:"M",t:"Pius XII, Encyclical Mediator Dei (20 November 1947), §58.",u:"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20111947_mediator-dei.html"},
+  humani:{g:"M",t:"Pius XII, Encyclical Humani Generis (12 August 1950), §§11–12, 15–16, 26. AAS 42 (1950) 561–578.",u:"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_12081950_humani-generis.html"},
+  praecones:{g:"M",t:"Pius XII, Encyclical Evangelii Praecones (2 June 1951), on the preservation of what is naturally good in each people.",u:"https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_02061951_evangelii-praecones.html"},
+  sc:{g:"M",t:"Second Vatican Council, Constitution Sacrosanctum Concilium (4 December 1963), §§22, 37–40.",u:"https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html"},
+  nostra:{g:"M",t:"Second Vatican Council, Declaration Nostra Aetate (28 October 1965), §2.",u:"https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html"},
+  libNuntius:{g:"M",t:"Congregation for the Doctrine of the Faith, Instruction on Certain Aspects of the “Theology of Liberation” (Libertatis Nuntius, 6 August 1984).",u:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19840806_theology-liberation_en.html"},
+  libConsc:{g:"M",t:"Congregation for the Doctrine of the Faith, Instruction on Christian Freedom and Liberation (Libertatis Conscientia, 22 March 1986).",u:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19860322_freedom-liberation_en.html"},
+  rm:{g:"M",t:"John Paul II, Encyclical Redemptoris Missio (7 December 1990), §§17–18 (on “kingdom-centred” views) and §54 (criteria for inculturation).",u:"https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_07121990_redemptoris-missio.html"},
+  balasuriya:{g:"M",t:"Congregation for the Doctrine of the Faith, Notification concerning the text “Mary and Human Liberation” by Fr. Tissa Balasuriya, O.M.I. (2 January 1997).",u:"https://www.ewtn.com/catholicism/library/notification-concerning-the-text-mary-and-human-liberation-by-fr-tissa-balasuriya-omi-29557"},
+  demello:{g:"M",t:"Congregation for the Doctrine of the Faith, Notification concerning the Writings of Father Anthony de Mello, S.J. (24 June 1998). AAS 90 (1998) 833–834.",u:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19980624_demello_en.html"},
+  di:{g:"M",t:"Congregation for the Doctrine of the Faith, Declaration Dominus Iesus (6 August 2000; published 5 September 2000), §§6, 10, 18, 21.",u:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html"},
+  dupuis:{g:"M",t:"Congregation for the Doctrine of the Faith, Notification on the book Toward a Christian Theology of Religious Pluralism by Fr. Jacques Dupuis, S.J. (24 January 2001).",u:"https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20010124_dupuis_en.html"},
+  trent:{g:"M",t:"Council of Trent, Session VII, canon 13 on the Sacraments (DS 1613); Session XXII, canons 1 and 3 on the Mass (DS 1751, 1753).",u:"https://www.papalencyclicals.net/councils/trent.htm"},
+  leo:{g:"M",t:"St. Leo the Great, Sermon 27 (On the Feast of the Nativity VII), ch. 4."},
+  innocent:{g:"M",t:"Innocent XI, Decree of the Holy Office condemning laxist propositions (2 March 1679), prop. 48 (DS 2148)."},
+  code1917:{g:"M",t:"Codex Iuris Canonici (1917), canons 818, 1257, 1258 §1."},
+  thomas103:{g:"M",t:"St. Thomas Aquinas, Summa Theologiae I-II, q. 103, a. 4 (all ceremonies are professions of faith).",u:"https://www.newadvent.org/summa/2103.htm#article4"},
+  thomas5:{g:"M",t:"St. Thomas Aquinas, Summa Theologiae II-II, q. 5, a. 3 (the heretic in one article has no faith in the others).",u:"https://www.newadvent.org/summa/3005.htm#article3"},
+  /* Own words */
+  gospelCulture:{g:"P",t:"D. S. Amalorpavadass, Gospel and Culture: Evangelisation, Inculturation and Hinduisation (Bangalore: NBCLC, 1978)."},
+  wordWorship:{g:"P",t:"D. S. Amalorpavadass, sun meditations in Word and Worship (NBCLC review), November–December 1982."},
+  rays:{g:"P",t:"D. S. Amalorpavadass, in Rays of Light, July 1981, p. 27."},
+  ascent:{g:"P",t:"Swami Abhishiktananda (Henri Le Saux), Ascent to the Depth of the Heart: The Spiritual Diary (1948–1973), ed. R. Panikkar (Delhi: ISPCK, 1998)."},
+  stuart:{g:"P",t:"James Stuart, ed., Swami Abhishiktananda: His Life Told Through His Letters (Delhi: ISPCK)."},
+  griffithsTablet:{g:"P",t:"Bede Griffiths, “The Universal Truth”, The Tablet, 1 February 1975 (reprinted by the Bede Griffiths Sangha).",u:"https://bedegriffithssangha.org.uk/the-universal-truth/"},
+  balasuriyaRec:{g:"P",t:"Tissa Balasuriya, O.M.I., Statement of Reconciliation (15 January 1998).",u:"https://www.catholicculture.org/culture/library/view.cfm?recnum=255"},
+  panikkar:{g:"P",t:"Raimon Panikkar, The Unknown Christ of Hinduism (London: Darton, Longman & Todd, 1964; rev. ed. Orbis, 1981)."},
+  blondel:{g:"P",t:"Maurice Blondel, L'Action: Essai d'une critique de la vie et d'une science de la pratique (Paris, 1893)."},
+  rahner:{g:"P",t:"Karl Rahner, “Christianity and the Non-Christian Religions”, Theological Investigations vol. 5, pp. 115–134; “Anonymous Christians”, vol. 6, pp. 390–398."},
+  delubac:{g:"P",t:"Henri de Lubac, Surnaturel: Études historiques (Paris: Aubier, 1946)."},
+  /* Witness */
+  chacko:{g:"W",t:"Fr. T. J. Chacko, open letter to the CBCI reporting the 10th Intensive Training Course at the NBCLC."},
+  canonCourse:{g:"W",t:"Participant's report of the NBCLC course on the New Code of Canon Law, Bangalore, May–June 1984."},
+  knox1975:{g:"W",t:"Letter of Cardinal James Knox, Prefect of the Congregation for Divine Worship, to the CBCI, 14 June 1975 (Prot. 789/75), as reported in the critical literature. We have not yet seen the original text."},
+  /* Scholarly / critic */
+  kulanday:{g:"S",t:"Victor J. F. Kulanday, The Paganization of the Church in India (Madras: Galilee, 1985; 2nd ed. 1988)."},
+  pkgeorge:{g:"S",t:"Fr. P. K. George, S.J., study of the God With Us catechism series submitted to the Holy See, as reported by Kulanday."},
+  vanderploeg:{g:"S",t:"J. P. M. van der Ploeg, O.P., The Banyan Tree (1979)."},
+  fastiggi:{g:"S",t:"Robert Fastiggi and José Pereira, critique of Bede Griffiths, Crisis magazine, March 1991."},
+  fabro:{g:"S",t:"Cornelio Fabro, La svolta antropologica di Karl Rahner (Milan: Rusconi, 1974)."},
+  garrigou:{g:"S",t:"Réginald Garrigou-Lagrange, O.P., “La nouvelle théologie où va-t-elle?”, Angelicum 23 (1946)."},
+  lipner:{g:"S",t:"Julius Lipner, Brahmabandhab Upadhyay: The Life and Thought of a Revolutionary (Oxford University Press, 1999)."},
+  podipara:{g:"S",t:"Placid J. Podipara, C.M.I., The Thomas Christians (1970): “Indian in culture, Christian in religion and Oriental in worship.”"},
+  said:{g:"S",t:"Edward W. Said, Orientalism (New York: Pantheon, 1978)."},
+  aleaz:{g:"S",t:"K. P. Aleaz, on Keshub Chunder Sen and the Saccidananda Trinity, Jnanadeepa: Pune Journal of Religious Studies 11/1 (January 2008)."},
+  /* News */
+  causeIV:{g:"N",t:"InfoVaticana, “Rome authorizes the cause of canonization of Amalorpavadass”, 4 November 2026.",u:"https://infovaticana.com/en/2026/11/04/rome-authorizes-the-cause-of-canonization-of-amalorpavadass-the-indian-priest-of-inculturated-liturgy/"},
+  causeUCA:{g:"N",t:"UCA News, report on the opening of the cause of D. S. Amalorpavadass, November 2026.",u:"https://www.ucanews.com/news/priest-who-gave-christianity-an-indian-soul-moves-toward-sainthood/115982"},
+  amaladossRNS:{g:"N",t:"David Gibson, “Vatican threatens Jesuit theologian in India with censure”, Religion News Service, 12 May 2014.",u:"https://religionnews.com/2014/05/12/vatican-threatens-jesuit-theologian-india-censure/"},
+  amaladossUCA:{g:"N",t:"UCA News, “Vatican shows renewed interest in Asian theology” (notes the 2014 CDF examination of The Asian Jesus).",u:"https://www.ucanews.com/news/vatican-shows-renewed-interest-in-asian-theology/84390"},
+  balasuriyaAN:{g:"N",t:"AsiaNews, “Fr Tissa Balasuriya, controversial Sri Lankan theologian, laid to rest”, 21 January 2013.",u:"https://www.asianews.it/en/south-asia/sri-lanka/fr-tissa-balasuriya-controversial-sri-lankan-theologian-laid-to-rest"},
+  dupuisCT:{g:"N",t:"Christianity Today / ENI, “Vatican Attempts to Clarify Jesuit's Stance on Religious Pluralism”, February 2001 (Dupuis in India 1948–1984).",u:"https://www.christianitytoday.com/?p=148168"}
+};
+
+/* ---------- Questions and answers ---------- */
+const CATS = [
+{id:"basics",kick:"Part 1",title:"The basic questions",intro:"Start here. What the words mean, and where the line falls between lawful adaptation and the mixing of religions.",qs:[
+{id:"what-is-inculturation",q:"What is “inculturation”?",
+ a:`<p class="short"><b>In short:</b> the claim that the Gospel must be re-expressed in each culture, including, in its Indian form, that rites, symbols and scriptures of Hinduism may be taken into Catholic worship and theology.</p>
+ <p>The word became common in Catholic circles in the 1970s. In its mild sense it means only that the Faith is preached in the people's own language and customs, which the Church has always done. In its Indian form, as taught at the National Biblical, Catechetical and Liturgical Centre (NBCLC) in Bangalore, it went much further. Its founding director wrote that everything in Christianity except the “spirit of Jesus Christ” and fraternal love is a “cultural identity” which “should be shed in view of a new inculturation in a new milieu.”</p>
+ <blockquote>“As Indians we can claim all that is Hindu and Indian as our own; as Christians we can state that whatever belongs to Christ belongs to us. So we borrow nothing.”<cite>D. S. Amalorpavadass, Gospel and Culture (1978), pp. 40–41</cite></blockquote>
+ <p>This site uses “inculturation” in that second, Indian programme sense.</p>`,
+ src:["gospelCulture","rm"]},
+{id:"what-is-liberation-theology",q:"What is “liberation theology”?",
+ a:`<p class="short"><b>In short:</b> a movement, born in Latin America in the late 1960s, that reads salvation chiefly as liberation from economic, social and political oppression, often using Marxist analysis.</p>
+ <p>Rome did not condemn concern for the poor; it condemned the reduction of salvation to politics. The Congregation for the Doctrine of the Faith (CDF) taught in 1984 that “liberation is first and foremost liberation from the radical slavery of sin.” It warned that Marxist analysis cannot be taken over apart from its ideology, and it rejected the identification of “the kingdom of God and its growth with the human liberation movement.”</p>
+ <p>In Asia, liberation theology joined with inculturation. The best documented case is the Sri Lankan Oblate Tissa Balasuriya, whose book <i>Mary and Human Liberation</i> combined both and led to his excommunication in 1997 (see “What Rome said”).</p>`,
+ src:["libNuntius","libConsc","balasuriya"]},
+{id:"adaptation-vs-syncretism",q:"Is the Church against Indian culture?",
+ a:`<p class="short"><b>No.</b> The Church has always kept what is naturally good in a people. What she forbids is taking acts of another religion's worship into Catholic worship.</p>
+ <p>In 1659 the Congregation de Propaganda Fide told missionaries not to try to change a people's rites, customs and manners unless these were “evidently contrary to religion and sound morals.” Pius XII taught the same in 1951 in <i>Evangelii Praecones</i>: the Gospel does not destroy what a people has that is naturally good, just or beautiful.</p>
+ <p>So a Tamil melody, sitting on a mat, the saree and the veshti, the Tamil language and the family piety of our villages are not the problem. OM, arati before an image, the <i>samdhya</i> and Upanishadic texts in the Mass are another matter: they are not “Indian culture” in general but acts of Hindu religion.</p>
+ <p>St. Thomas gives the reason. External ceremonies are not neutral decoration; “all ceremonies are professions of faith.”</p>`,
+ src:["propaganda1659","praecones","thomas103"]},
+{id:"belief-and-culture",q:"Why can't a rite be borrowed and simply “given a Christian meaning”?",
+ a:`<p class="short"><b>Because a rite speaks before anyone explains it.</b> What people see the priest do teaches them what he believes.</p>
+ <p>Belief comes before culture: a culture is the visible form of what a people believes about God and man. A Hindu rite carries a Hindu belief. Simple people learn their religion more through their eyes than through books. When they see the Catholic priest wave the arati and sit before the <i>kuthuvilakku</i> as the pujari does in the temple, the lesson they learn without words is that both religions are the same.</p>
+ <p>St. Thomas teaches that a false profession of faith made by deeds is as grave as one made by words. The ancient rule is <i>lex orandi, lex credendi</i>: the law of prayer establishes the law of belief.</p>`,
+ src:["thomas103","mediator"]}
+]},
+
+{id:"origins",kick:"Part 2",title:"Where did it come from?",intro:"Indian inculturation is usually presented as an Indian discovery. The dates tell another story.",qs:[
+{id:"western-origin",q:"Did inculturation grow out of Indian Catholic soil?",
+ a:`<p class="short"><b>No.</b> Its controlling ideas were worked out in Europe and carried to India chiefly by three European monks.</p>
+ <p>The philosophical seed is usually traced to Maurice Blondel's <i>L'Action</i> (1893), with its “method of immanence”; then to Karl Rahner's “anonymous Christian”; then to the French <i>nouvelle théologie</i>, especially Henri de Lubac's <i>Surnaturel</i> (1946). In India, the work was begun by the French priests Jules Monchanin and Henri Le Saux and continued by the English Benedictine Bede Griffiths.</p>
+ <p>India's oldest living Christians, the St Thomas Christians of Kerala, had long been, in Fr. Placid Podipara's phrase, “Indian in culture, Christian in religion and Oriental in worship.” The ashram movement did not come from them. It drew on Vedanta texts as read by European scholarship.</p>
+ <p class="caution"><b>Fair note:</b> Blondel and de Lubac have orthodox defenders, and de Lubac was later made a cardinal. The argument here is about the <i>effect</i> of their ideas, not a claim that they were personally heretics.</p>`,
+ src:["blondel","rahner","delubac","podipara","garrigou"]},
+{id:"chronology",q:"What are the key dates?",
+ a:`<p class="short"><b>The ashram experiment began fifteen years before the Council's declaration on other religions.</b></p>
+ <table class="tl">
+ <tr><td>1893</td><td>Blondel defends <i>L'Action</i> at the Sorbonne.</td></tr>
+ <tr><td>1907</td><td>St. Pius X condemns Modernism (<i>Pascendi</i>, <i>Lamentabili</i>).</td></tr>
+ <tr><td>1910</td><td>Oath against Modernism required of all clerics.</td></tr>
+ <tr><td>1946</td><td>De Lubac, <i>Surnaturel</i>; Garrigou-Lagrange asks where the “new theology” is going.</td></tr>
+ <tr><td>21 Mar 1950</td><td>Monchanin and Le Saux found Saccidananda Ashram (Shantivanam), Tamil Nadu.</td></tr>
+ <tr><td>12 Aug 1950</td><td>Pius XII, <i>Humani Generis</i>, against dogmatic relativism and the denial of the gratuity of the supernatural.</td></tr>
+ <tr><td>1964</td><td>Panikkar, <i>The Unknown Christ of Hinduism</i> (from a 1961 Lateran dissertation).</td></tr>
+ <tr><td>28 Oct 1965</td><td>Vatican II, <i>Nostra Aetate</i>.</td></tr>
+ <tr><td>1967</td><td>NBCLC erected in Bangalore under the CBCI; D. S. Amalorpavadass director.</td></tr>
+ <tr><td>25 Apr 1969</td><td>Rome approves twelve points of liturgical adaptation for India.</td></tr>
+ <tr><td>1984</td><td>CDF, <i>Libertatis Nuntius</i>, on liberation theology.</td></tr>
+ <tr><td>1997–2001</td><td>CDF acts on Balasuriya (1997), de Mello (1998), <i>Dominus Iesus</i> (2000), Dupuis (2001).</td></tr>
+ <tr><td>Nov 2026</td><td>Cause of canonization of Amalorpavadass opened.</td></tr>
+ </table>`,
+ src:["blondel","pascendi","oath","delubac","humani","nostra","libNuntius","di","causeIV"]},
+{id:"humani-generis",q:"Did the Church warn about these ideas before Vatican II?",
+ a:`<p class="short"><b>Yes.</b> In the same year Shantivanam was founded, Pius XII issued <i>Humani Generis</i> (12 August 1950).</p>
+ <p>The encyclical condemned those who want to “reduce to a minimum the meaning of dogmas” and to free dogma from the Church's long-established terms; such efforts, it said, not only lead to “dogmatic relativism” but “actually contain it” (§§14–16). It rejected the view that the mysteries of faith are expressed only by “approximate and ever changeable notions” (§15), and a false “eirenism” that would reconcile things opposed in dogma (§§11–12). It also condemned those who “destroy the gratuity of the supernatural order” (§26).</p>
+ <p>These are exactly the moves later made in the name of inculturation: Christian doctrine treated as one cultural expression among others.</p>`,
+ src:["humani","garrigou"]},
+{id:"three-monks",q:"Who were Monchanin, Le Saux and Griffiths?",
+ a:`<p><b>Jules Monchanin</b> (1895–1957), a French priest, came to India in 1939. <b>Henri Le Saux</b> (1910–1973), a French Benedictine, came in 1948 and took the name Swami Abhishiktananda. Together they founded Saccidananda Ashram on the Kaveri near Tiruchirappalli on 21 March 1950. They wore the saffron robe and used the Vedantic term <i>Saccidananda</i> (Being–Consciousness–Bliss) for the Trinity.</p>
+ <p>Le Saux moved furthest. In his diary he wrote that the one who knows several religious languages “is incapable of absolutizing any formulation whatever — of the gospel, of the Upanishads, of Buddhism.” Elsewhere he wrote that “the discovery of Christ's I AM is the ruin of any Christian theology.”</p>
+ <p><b>Bede Griffiths</b> (1906–1993), an English Benedictine, came to India in 1955 and led Shantivanam from 1968. He called himself “a Christian in religion but a Hindu in spirit.” In 1975 he reported in <i>The Tablet</i> that readings from Hindu scriptures in the liturgy had “become customary in many places.”</p>
+ <p class="caution"><b>Verification note:</b> a line often attributed to Le Saux, that “the uniqueness of Christ is a false problem”, could not be verified word for word, so it is not used here. Page numbers for the diary and letters still need checking against the printed editions.</p>`,
+ src:["ascent","stuart","griffithsTablet","fastiggi"]},
+{id:"saccidananda",q:"Is “Saccidananda” a Catholic name for the Trinity?",
+ a:`<p class="short"><b>No.</b> It is a Vedantic description of Brahman, first applied to the Trinity by a Hindu reformer.</p>
+ <p>K. P. Aleaz documents that Keshub Chunder Sen of the Brahmo Samaj interpreted the Trinity as <i>Saccidananda</i> in 1882, though for Sen the Trinity was only a symbol of three functions of one person. The convert Brahmabandhab Upadhyay later took up the term in his hymn <i>Vande Saccidanandam</i>.</p>
+ <p>Upadhyay's own story is a warning. According to his biographer Julius Lipner, two months before his death in 1907 he publicly underwent the Hindu rite of <i>prāyaścitta</i> (expiation) for readmission to Hindu society. He is a poor model for a stable Catholic synthesis.</p>
+ <p class="caution"><b>Verification note:</b> the 1882 date comes from Aleaz's article and should be checked against Sen's lectures.</p>`,
+ src:["aleaz","lipner"]},
+{id:"orientalism",q:"Whose “India” did the inculturationists adopt?",
+ a:`<p class="short"><b>A Sanskrit, Brahminical India drawn from European books</b>, not the India of most Indian Catholics.</p>
+ <p>Edward Said argued that 19th-century European scholarship built an image of the “mystical East”. For India this meant treating the Vedas, Upanishads and Gita, read through Brahmin interpreters, as the real India.</p>
+ <p>The ashram and NBCLC programme took up exactly that India: Sanskrit names, <i>advaita</i>, OM and the Upanishads. Meanwhile most Catholics in India are Dalits, tribals, St Thomas Christians and the old Tamil, Goan and Mangalorean communities. Their own Catholic customs were passed over. A movement that claimed to make the Church Indian imported a Western academic picture of India instead.</p>`,
+ src:["said","podipara","fastiggi"]},
+{id:"vatican-ii-cover",q:"What role did Vatican II play?",
+ a:`<p class="short"><b>It came after the ideas, and was then cited to authorise them.</b></p>
+ <p><i>Nostra Aetate</i> (1965) said that the Church “rejects nothing that is true and holy” in other religions and spoke of Hindus contemplating the divine mystery. It did not say that Hindu rites may be used in the Mass. <i>Sacrosanctum Concilium</i> allowed adaptation, but placed it under the Holy See and stated that no one, even a priest, may add, remove or change anything in the liturgy on his own authority (§22).</p>
+ <p>The ashram had already been founded in 1950. By their own account its founders saw themselves as “anticipating” the Council. After 1965 the Council's words were used as cover, and in 1967 the NBCLC gave the programme an office, a budget and the bishops' name.</p>`,
+ src:["nostra","sc","humani"]}
+]},
+
+{id:"nbclc",kick:"Part 3",title:"The NBCLC and Fr. D. S. Amalorpavadass",intro:"How the programme became official in India.",qs:[
+{id:"what-is-nbclc",q:"What is the NBCLC?",
+ a:`<p>The National Biblical, Catechetical and Liturgical Centre in Bangalore was set up in 1967 by the Catholic Bishops' Conference of India (CBCI). Its founding director was Fr. Duraisamy Simon Amalorpavadass (1932–1990), a priest of the Salem diocese.</p>
+ <p>It became the engine of liturgical “Indianization”: the 1969 twelve points of adaptation, the experimental Indian Order of the Mass and Indian anaphora, the <i>God With Us</i> catechism series, and courses for priests, sisters and seminarians from across India.</p>`,
+ src:["causeUCA","kulanday","gospelCulture"]},
+{id:"amalor-identity",q:"What did Amalorpavadass teach about Christian identity?",
+ a:`<p>His own words:</p>
+ <blockquote>“Christianity has no identity except spirit of Jesus Christ and the sign of fraternal love… The rest is only a cultural identity which is derived from a particular society and time, and which should be shed in view of a new inculturation in a new milieu.”<cite>Gospel and Culture (NBCLC, 1978)</cite></blockquote>
+ <p>If dogma, sacraments, hierarchy and rites are only cultural clothing, they may be taken off. This is the Modernist thesis that the Holy Office condemned in 1907: that Christ did not teach a fixed body of doctrine but began a religious movement “adapted or to be adapted to different times and places” (<i>Lamentabili</i>, prop. 59).</p>
+ <p>The First Vatican Council taught that the meaning of dogma once declared by the Church must be kept forever. The Oath against Modernism, which every priest ordained before 1967 had to swear, rejects the idea that dogmas evolve from one meaning into another. Amalorpavadass was ordained in 1959.</p>`,
+ src:["gospelCulture","lamentabili","deiFilius","oath"]},
+{id:"amalor-sun",q:"Did the NBCLC bring Hindu worship into Catholic prayer?",
+ a:`<p>In his own published meditations on the sun, Amalorpavadass invited Catholics at sunset to “enter into communion” with “millions of Hindus” who were at that moment “facing the sun and performing samdhya prayers.” The <i>samdhya</i> is the Brahminical dawn and dusk rite centred on the Gayatri mantra addressed to the sun-deity.</p>
+ <p>According to published descriptions, the NBCLC's experimental Indian Mass included the chanting of OM, Upanishadic texts, arati, purification rites and Communion spoken of as <i>prasada</i>. The NBCLC chapel was built in temple style.</p>
+ <p>The 1917 Code forbade the faithful to take part in any way in the sacred rites of non-Catholics (can. 1258 §1). Pope St. Leo the Great rebuked Christians in Rome who bowed to the rising sun on the steps of St. Peter's.</p>`,
+ src:["wordWorship","kulanday","vanderploeg","code1917","leo"]},
+{id:"rome-1975",q:"Did Rome ever stop the Indian Mass?",
+ a:`<p>The critical literature reports that on 14 June 1975 Cardinal James Knox, Prefect of the Congregation for Divine Worship, wrote to the CBCI (Prot. 789/75) ordering it to stop circulating unauthorised Indian Orders of the Mass and the Indian anaphora, and to stop using non-biblical scriptures in the liturgy.</p>
+ <p>Bede Griffiths' own article in <i>The Tablet</i> earlier that year confirms the background: an Indian anaphora had been published, and readings from Hindu scriptures in the liturgy had become customary in many places.</p>
+ <p class="caution"><b>Verification note:</b> we have not yet seen the text of the 1975 letter itself. It is listed as a witness report until the original is found. If you hold a copy, please send it.</p>`,
+ src:["knox1975","griffithsTablet","kulanday"]},
+{id:"god-with-us",q:"What was wrong with the “God With Us” catechism?",
+ a:`<p>These points come from critics of the books, chiefly the study by Fr. P. K. George, S.J., submitted to the Holy See and reported by Victor Kulanday. They are their findings, not quotations from Amalorpavadass.</p>
+ <p>According to that study, the series:</p>
+ <ul>
+ <li>did not teach the Fall and Original Sin, so Baptism was presented without the remission of sin;</li>
+ <li>said Jesus did not heal people to prove He was God;</li>
+ <li>presented Penance as communal reconciliation rather than the priest's judicial absolution;</li>
+ <li>repeatedly called the Eucharist a “family meal”;</li>
+ <li>replaced the question-and-answer catechism with a “life-centred” method.</li>
+ </ul>
+ <p>Critics also record that a lay group went to court over an illustration of the Annunciation in the series, and that the judge ordered it removed.</p>
+ <p>Against these points stand the Council of Trent on Original Sin and on the judicial nature of absolution, and Vatican I on miracles as certain signs of revelation.</p>`,
+ src:["pkgeorge","kulanday","trent","deiFilius"]},
+{id:"amalor-papacy-morals",q:"What else is he reported to have taught?",
+ a:`<p>Two reports from witnesses. They are second-hand and are given as such.</p>
+ <p><b>On the papacy and canon law</b>, at an NBCLC course in 1984: that “in the beginning there was no law”, that the popes slowly began to rule, that local bishops may change the Code according to culture, and that “in India we need an Indian Law.” In his own published book he described the Pope as “President of the Universal fellowship of churches,” whose unity works “by inspiration and not by imposition.”</p>
+ <p><b>On chastity</b>, Fr. T. J. Chacko reported him telling priests and religious in formation that on physical intimacy “none has the right to condemn.” If accurate, this contradicts 1 Corinthians 6:9–10 and Innocent XI's condemnation of laxism (1679).</p>
+ <p><b>On religious life</b>: “I like to define religious life as a state of freedom and tending towards total and all round freedom.”</p>`,
+ src:["canonCourse","gospelCulture","chacko","innocent","rays"]},
+{id:"amalor-cause",q:"Rome has opened his cause for sainthood. Doesn't that settle it?",
+ a:`<p class="short"><b>No.</b> Opening a cause is the beginning of an inquiry, not a verdict.</p>
+ <p>In November 2026 news outlets reported that the Holy See had allowed his cause to be opened, so he now has the title “Servant of God.” As UCA News itself put it, this begins a process; it is not a declaration of sainthood.</p>
+ <p>Under the traditional procedure, a Servant of God's writings had to be examined by censors for anything against faith or morals before a cause could advance. The faithful are entitled to set his published words beside what the Magisterium has always taught. The measure of the Faith is what the Church has always taught, not honours given after the fact.</p>`,
+ src:["causeIV","causeUCA","gospelCulture"]}
+]},
+
+{id:"liberation",kick:"Part 4",title:"Liberation theology in India and Asia",intro:"How the political reading of salvation joined the Hindu-symbol programme.",qs:[
+{id:"lt-what-rome",q:"What exactly did Rome reject in liberation theology?",
+ a:`<p>The 1984 Instruction <i>Libertatis Nuntius</i> named these errors:</p>
+ <ul>
+ <li>putting liberation from sin “in second place”; “the first liberation, to which all others must make reference, is that from sin” (IV.12);</li>
+ <li>borrowing Marxist analysis, from which the ideology of class struggle cannot be separated (VII.6);</li>
+ <li>redefining faith as “fidelity to history”, which it called “historicist immanentism” (IX.3–4);</li>
+ <li>a “Church of the people”, set against the “sacramental and hierarchical structure” of the Church (IX.12–13);</li>
+ <li>identifying “the kingdom of God and its growth with the human liberation movement” (IX.3).</li>
+ </ul>
+ <p>A second instruction, <i>Libertatis Conscientia</i> (1986), set out the true Christian doctrine of freedom.</p>`,
+ src:["libNuntius","libConsc"]},
+{id:"lt-india-link",q:"How are liberation theology and inculturation connected in India?",
+ a:`<p class="short"><b>Both move salvation from the supernatural to the natural.</b> One says the Church's task is political liberation; the other says other religions are already ways of salvation. The result is the same: no need for conversion, baptism or the Church.</p>
+ <p>The clearest documented case in South Asia is Fr. Tissa Balasuriya, O.M.I., of Sri Lanka. AsiaNews described his book <i>Mary and Human Liberation</i> as combining Latin American Marxist-inspired liberation theology with an Asian vision of religious integration. In his 1998 reconciliation statement he said he had worked for “integral human liberation” and to “promote theology in view of an inculturation of the faith in Asia.”</p>
+ <p>The CDF found that the book contradicted Catholic doctrine on, among other things, original sin, Christ's divinity and Our Lady's privileges.</p>`,
+ src:["balasuriya","balasuriyaRec","balasuriyaAN"]},
+{id:"lt-kingdom",q:"What is wrong with “Kingdom, not Church”?",
+ a:`<p>A common Asian theme is that the Church's mission is to build “the Kingdom” of justice and peace wherever it appears, in any religion or movement, rather than to bring people into the Church.</p>
+ <p>John Paul II addressed this in <i>Redemptoris Missio</i> (1990, §§17–18). He described “kingdom-centred” views that keep silent about Christ and say little about the Church, and he rejected them: the Kingdom cannot be detached from Christ or from the Church.</p>
+ <p><i>Dominus Iesus</i> (2000) repeats that one “may not separate the kingdom from the Church” (§18) and that it would be “contrary to the faith to consider the Church as <i>one way</i> of salvation alongside those constituted by the other religions” (§21).</p>`,
+ src:["rm","di","libNuntius"]}
+]},
+
+{id:"rome",kick:"Part 5",title:"What Rome itself said",intro:"Even after the Council, Rome repeatedly acted against these ideas, often in cases tied to India and South Asia.",qs:[
+{id:"de-mello",q:"Who was Anthony de Mello, and what did Rome say?",
+ a:`<p>Fr. Anthony de Mello, S.J. (1931–1987) was an Indian Jesuit whose spiritual books sold worldwide. In 1998 the CDF, under Cardinal Ratzinger and with John Paul II's approval, found that his later writings had arrived at ideas of God, revelation, Christ and man's final destiny that cannot be reconciled with Church doctrine. It declared these positions “incompatible with the Catholic faith” and able to “cause grave harm.”</p>
+ <p>The Notification also acknowledged positive features in many of his writings. The judgement concerned his doctrine, not every page he wrote.</p>`,
+ src:["demello"]},
+{id:"dupuis",q:"What about Jacques Dupuis?",
+ a:`<p>Fr. Jacques Dupuis, S.J., a Belgian, lived in India from 1948 to 1984 and taught Christology there for many years before teaching at the Gregorian in Rome. In 2001 the CDF issued a Notification on his book <i>Toward a Christian Theology of Religious Pluralism</i> (1997), citing ambiguities that could lead readers into error.</p>
+ <p>Among its points: the view that other religions, considered as such, are ways of salvation “has no foundation in Catholic theology,” because they contain omissions, insufficiencies and errors; and the followers of other religions “are oriented to the Church and are all called to become part of her.” Dupuis accepted the Notification.</p>`,
+ src:["dupuis","dupuisCT"]},
+{id:"dominus-iesus",q:"What does Dominus Iesus teach on these questions?",
+ a:`<p>The 2000 Declaration teaches that:</p>
+ <ul>
+ <li>the theory that the revelation of Jesus Christ is “limited, incomplete, or imperfect” is contrary to the faith (§6);</li>
+ <li>Jesus of Nazareth “and he alone, is the Son and the Word of the Father” (§10); He is not one of many incarnations or avatars;</li>
+ <li>the Kingdom may not be separated from the Church (§18);</li>
+ <li>the Church is not “one way” of salvation alongside others, and rites that depend on superstition or error “constitute an obstacle to salvation” (§21).</li>
+ </ul>`,
+ src:["di"]},
+{id:"amaladoss",q:"Was any living Indian theologian examined?",
+ a:`<p>Yes. In 2014 news reports said the CDF was examining the work of the Indian Jesuit Fr. Michael Amaladoss, best known for <i>The Asian Jesus</i> (2006), which presents Jesus through images such as guru, avatar and dancer. Union Theological Seminary in New York cancelled his lecture, stating that the CDF had forbidden him to speak and publish until the examination was completed. He met CDF officials in Rome and agreed to rework the disputed points. His Jesuit provincial said there had been no condemnation.</p>
+ <p class="caution"><b>Correction note:</b> some drafts say Amaladoss received a CDF Notification in 2006. We found no such document. The examination reported was in 2014, and no public Notification is known.</p>`,
+ src:["amaladossRNS","amaladossUCA"]}
+]},
+
+{id:"tradition",kick:"Part 6",title:"The perennial teaching",intro:"What the Church taught before these questions arose, and still teaches.",qs:[
+{id:"indifferentism",q:"Are all religions ways to God?",
+ a:`<p>Gregory XVI called indifferentism, the opinion that one can be saved in any religion as long as morals are good, a “perverse opinion” (<i>Mirari Vos</i>, 1832, §13). Pius XI rejected the view that all religions are “more or less good and praiseworthy” as expressing in different ways the same sense of God (<i>Mortalium Animos</i>, 1928, §2).</p>
+ <p>St. Pius X described the Modernist position: if all religions arise from religious experience, on what ground could falsity be predicated of any of them (<i>Pascendi</i>, §14)? Inculturation in its Indian form accepts that premise when it treats Hindu worship as a vehicle of grace.</p>`,
+ src:["mirari","mortalium","pascendi","di"]},
+{id:"one-article",q:"Isn't one changed doctrine a small thing?",
+ a:`<p>St. Thomas teaches that one who rejects even one article of faith has no true faith in the others, “but only a kind of opinion in accordance with his own will” (II-II, q. 5, a. 3). The motive of faith is the authority of God revealing, not our liking for each doctrine.</p>
+ <p>That is why St. Pius X called Modernism “the synthesis of all heresies” (<i>Pascendi</i>, §39): it changes the nature of every dogma at once by making all of them expressions of experience.</p>`,
+ src:["thomas5","pascendi"]},
+{id:"liturgy-authority",q:"Who has authority to change the liturgy?",
+ a:`<p>Pius XII: “the Sovereign Pontiff alone enjoys the right to recognize and establish any practice touching the worship of God, to introduce and approve new rites… Private individuals, therefore, even though they be clerics, may not be left to decide for themselves in these holy and venerable matters” (<i>Mediator Dei</i>, §58).</p>
+ <p>The Council of Trent anathematised anyone who says the received and approved rites may be changed by any pastor into new ones (Sess. VII, can. 13). Even Vatican II's <i>Sacrosanctum Concilium</i> §22 says no one, even a priest, may add, remove or change anything in the liturgy on his own authority.</p>`,
+ src:["mediator","trent","sc","code1917"]},
+{id:"malabar-rites",q:"Has the Church judged this question on Tamil soil before?",
+ a:`<p class="short"><b>Yes: the Malabar Rites controversy</b> of the 17th and 18th centuries in the Madurai and Carnatic missions.</p>
+ <p>Gregory XV in 1623 allowed Roberto de Nobili's converts to keep certain marks of social rank, on the understanding that these were civil and not religious. But the Papal Legate, Cardinal de Tournon, forbade in 1704 a series of practices that belonged to Hindu worship, such as sacred ashes of Hindu usage and the tali bearing the image of Pillaiyar. Benedict XIV confirmed the prohibitions definitively in <i>Omnium Sollicitudinum</i> (1744) and bound missionaries by oath to observe them.</p>
+ <p>The principle is the same today: civil customs may stay; acts of pagan worship may not, whatever the missionary's intention. The NBCLC went much further than ashes or a tali, bringing OM and arati into the Mass itself.</p>`,
+ src:["gregoryXV","omnium","propaganda1659"]}
+]},
+
+{id:"objections",kick:"Part 7",title:"Objections answered",intro:"The questions people ask in good faith.",qs:[
+{id:"obj-council",q:"“But Vatican II approved inculturation.”",
+ a:`<p>The Council allowed adaptation of the liturgy to the genius of peoples, but under the Holy See's control and only in things not bound up with superstition and error (<i>Sacrosanctum Concilium</i> §37). It did not authorise Hindu scriptures, OM or arati at Mass, and Rome's own later documents set limits.</p>
+ <p>John Paul II gave two criteria for any inculturation: compatibility with the Gospel and communion with the universal Church (<i>Redemptoris Missio</i> §54). Practices taken from another religion's worship fail the first.</p>`,
+ src:["sc","rm","di"]},
+{id:"obj-nobili",q:"“De Nobili and Beschi did the same thing.”",
+ a:`<p>They did not. Roberto de Nobili and Constantine Beschi (Veeramamunivar) adopted Tamil dress, food, language and learning to preach Christ crucified and baptise converts. They did not bring Hindu rites into the Mass or say that Hinduism was already a way of salvation. Where missionaries in their region kept customs belonging to Hindu worship, Rome forbade those customs (see “Malabar Rites”).</p>`,
+ src:["gregoryXV","omnium"]},
+{id:"obj-western",q:"“Opposing inculturation is just defending Western Christianity.”",
+ a:`<p>The Latin Mass is no more “Western” to a Tamil villager than the Syro-Malabar Qurbana is to a Keralite; both are inherited Catholic worship. The traditional Church did not require Indians to become Europeans (Propaganda Fide, 1659). And as Part 2 shows, the inculturation programme itself was designed in Europe and carried here by European monks working from European scholarship.</p>`,
+ src:["propaganda1659","podipara","said"]},
+{id:"obj-poor",q:"“Liberation theology just means caring for the poor.”",
+ a:`<p>Care for the poor is a Christian duty, and Rome said so in the same documents. <i>Libertatis Nuntius</i> begins by calling the Gospel “a message of freedom and a force for liberation.” What it rejected was making political liberation the essence of salvation and taking over Marxist analysis. The saints who served India's poor, from St. Francis Xavier to St. John de Britto, did it while preaching repentance and baptism.</p>`,
+ src:["libNuntius","libConsc"]}
+]},
+
+{id:"witnesses",kick:"Part 8",title:"Witnesses who resisted",intro:"Catholics who documented what was happening at the time.",qs:[
+{id:"kulanday",q:"Who was Victor Kulanday?",
+ a:`<p>Victor J. F. Kulanday founded the All India Laity Congress and edited <i>The Laity</i>. His book <i>The Paganization of the Church in India</i> (1985) documented the Indian Rite Mass, fire worship and the Nataraja image at the NBCLC. In 1983 he led a lay delegation to present a petition to John Paul II from Catholics of India against “pantheistic rituals.”</p>
+ <blockquote>“Truth is the only weapon which can isolate the paganisers, expose the evil and save the Church in India.”<cite>V. J. F. Kulanday</cite></blockquote>
+ <p class="caution"><b>Fair note:</b> one academic study describes his language as bellicose but grants that his critiques were often well documented. Use his book for its documents and reports, and check them where possible.</p>`,
+ src:["kulanday"]},
+{id:"other-critics",q:"Did any theologians or scholars object?",
+ a:`<p>Yes, including:</p>
+ <ul>
+ <li><b>J. P. M. van der Ploeg, O.P.</b>, Dutch biblical scholar, who wrote <i>The Banyan Tree</i> (1979) on the state of the Church in India.</li>
+ <li><b>Paul Hacker</b>, German Indologist, who appealed to the Indian hierarchy.</li>
+ <li><b>Robert Fastiggi and José Pereira</b>, who argued in <i>Crisis</i> (1991) that Griffiths' equation of the Father with <i>nirguna brahman</i> and the Son with <i>saguna brahman</i> would make the Son less than the Father, and that his project was “neither authentically Hindu nor Christian.”</li>
+ <li><b>Cornelio Fabro</b>, who in 1974 charged Rahner with bending theology to Heidegger's “transcendental anthropology.”</li>
+ </ul>`,
+ src:["vanderploeg","fastiggi","fabro"]}
+]},
+
+{id:"action",kick:"Part 9",title:"What should the faithful do?",intro:"",qs:[
+{id:"what-to-do",q:"What can an ordinary Catholic do?",
+ a:`<ul>
+ <li><b>Hold fast to the Mass of all time.</b> Kneel and genuflect before the Blessed Sacrament.</li>
+ <li><b>Learn and teach the catechism in its traditional form</b>: the Catechism of the Council of Trent, or the Catechism of St. Pius X, in Tamil or English. Teach children definite truths: Original Sin, the Four Last Things, the Sacrifice of the Mass, the necessity of the Church.</li>
+ <li><b>Take no part in the rites of other religions</b>: no samdhya, no arati before images, no OM chanting, no Brahman-realization retreats.</li>
+ <li><b>Keep what is good in our culture</b>: our language, music, dress, hospitality and family piety.</li>
+ <li><b>Love our Hindu neighbours truly</b>: with honesty, kindness and prayer for their conversion, as St. Francis Xavier and St. John de Britto did on this soil.</li>
+ <li><b>Answer calmly, with sources.</b> Quote the person's own published words and the Church's own documents, not insults.</li>
+ <li><b>Pray</b> for the souls of those who led this movement, and for the priests and religious formed by it.</li>
+ </ul>
+ <blockquote>“O Timothy, keep that which is committed to thy trust, avoiding the profane novelties of words.”<cite>1 Timothy 6:20 (Douay-Rheims)</cite></blockquote>`,
+ src:["code1917","mediator","praecones"]}
+]}
+];
+
+/* ---------- Render ---------- */
+const gLabel = {M:"MAG",P:"OWN",W:"WIT",S:"SCH",N:"NEWS"};
+const root = document.getElementById('content');
+let n = 0;
+CATS.forEach(c=>{
+  const sec = document.createElement('section'); sec.className='cat'; sec.id=c.id;
+  sec.innerHTML = `<h2><small>${c.kick}</small>${c.title}</h2>${c.intro?`<p class="intro">${c.intro}</p>`:''}`;
+  c.qs.forEach(item=>{
+    n++;
+    const d = document.createElement('details'); d.className='qa'; d.id=item.id;
+    const srcs = item.src.map(k=>{
+      const s=S[k]; if(!s) return '';
+      const text = s.u?`<a href="${s.u}" target="_blank" rel="noopener">${s.t}</a>`:s.t;
+      return `<li>${s.g==='P'?'':`<span class="g ${s.g}">${gLabel[s.g]}</span>`}${text}</li>`;
+    }).join('');
+    d.innerHTML = `<summary><span class="qn">Q${n}</span>${item.q}</summary>
+      <div class="ans">${item.a}
+        <div class="src"><h4>Sources</h4><ol>${srcs}</ol></div>
+        <a class="permalink" href="#${item.id}">Link to this question</a>
+      </div>`;
+    sec.appendChild(d);
+  });
+  root.appendChild(sec);
+});
+
+/* open a question from the hash */
+function openHash(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  if(!h) return;
+  const el = document.getElementById(h);
+  if(el && el.tagName==='DETAILS'){ el.open=true; el.scrollIntoView({block:'start'}); }
+}
+window.addEventListener('hashchange',openHash); openHash();
+
+/* search */
+const q = document.getElementById('q'), count=document.getElementById('count');
+const all = [...document.querySelectorAll('details.qa')];
+function filter(){
+  const t = q.value.trim().toLowerCase(); let shown=0;
+  all.forEach(d=>{
+    const hit = !t || d.textContent.toLowerCase().includes(t);
+    d.classList.toggle('hidden',!hit); if(hit) shown++;
+    if(t && hit) d.open = true;
+  });
+  document.querySelectorAll('section.cat').forEach(s=>{
+    s.classList.toggle('hidden', !s.querySelector('details.qa:not(.hidden)'));
+  });
+  count.textContent = t ? `${shown} of ${all.length} questions` : `${all.length} questions`;
+}
+q.addEventListener('input',filter); filter();
+
+/* expand / collapse */
+const ex = document.getElementById('expand');
+ex.addEventListener('click',()=>{
+  const open = ex.textContent==='Open all';
+  all.forEach(d=>{ if(!d.classList.contains('hidden')) d.open=open; });
+  ex.textContent = open?'Close all':'Open all';
+});
+</script>
+</body>
+</html>
